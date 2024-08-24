@@ -1,0 +1,12 @@
+.journal-add {
+   /* margin: -10px 70px; */
+   display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+ }
+
+ .wrapper-add-button_text {
+   font-weight: 400;
+   font-size: 20px;
+  }
