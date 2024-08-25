@@ -1,7 +1,7 @@
 import './App.css';
-import Button from './components/Button/Button.jsx';
-import CardButton from './components/CardButton/CardButton.jsx';
-import JournalItem from './components/JournalItem/JournalItem.jsx';
+// import Button from './components/Button/Button.jsx';
+// import CardButton from './components/CardButton/CardButton.jsx';
+// import JournalItem from './components/JournalItem/JournalItem.jsx';
 import Header from './components/Header/Header.jsx';
 import LeftPanel from './layout/LeftPanel/LeftPanel.jsx';
 import JouranlAddButton from './components/JouranlAddButton/JouranlAddButton.jsx';
@@ -28,7 +28,6 @@ function App() {
 		// 	date:new Date()
 		// },
 		// {	
-		// 	id: 3,
 		// 	title: 'Первая заметка',
 		// 	text: 'Создал первую заметку, чтобы ...',
 		// 	date:new Date()
@@ -41,12 +40,8 @@ function App() {
 			text: item.text,
 			title: item.title,
 			date: new Date(item.date),
-			id:Math.max(oldItems.map(i => i.id)) + 1
+			id: oldItems.length > 0 ? oldItems.length + 1 : 1
 		}]);
-		 };
-
-		 const sortItems = (a, b) => {
-		return  a.date - b.date;
 		 };
 	
 
@@ -55,16 +50,7 @@ function App() {
 			<LeftPanel>
 				<Header/>
 				<JouranlAddButton/>
-				<JournalList>
-					{items.length === 0 ? <p>Empty</p> : items.sort(sortItems).map(el => 
-						<CardButton key={el.id}>
-							<JournalItem
-								title={el.title}
-								text={el.text}
-								date={el.date}
-							/>
-						</CardButton>
-					)}
+				<JournalList items={items}>
 				</JournalList>
 			</LeftPanel>
 			<Body>
