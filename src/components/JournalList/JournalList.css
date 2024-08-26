@@ -4,3 +4,9 @@
    flex-direction: column;
    gap: 20px;
 }
+
+.meassage {
+   margin-top: 30px;
+   text-align: center;
+   font-size: 30px;
+}

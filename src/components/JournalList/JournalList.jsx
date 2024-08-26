@@ -6,7 +6,7 @@ import CardButton from '../CardButton/CardButton.jsx';
 function JournalList({ items }) {
 	
 	if (items.length === 0 ) {
-	 return <p>Empty</p>;
+	 return <div className='meassage'>Empty</div>;
 	}
 
 	const sortItems = (a, b) => {

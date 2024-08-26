@@ -63,12 +63,25 @@ function JournalForm({ onSubmit }) {
 	return (
 		<form className={styles['journal-form']} onSubmit={addJournalItem}>
 			{/* {state.age} */}
-			<input type="text" name='title' className={cn(styles['input'], {
+			<input type="text" name='title' placeholder='Title' className={cn(styles['input'], styles['input-title'], {
 				[styles['invalid']]: !formValidState.title
 			})}/>
-			<input type="date" name='date'  className={`${styles['input']} ${formValidState.date ? '' : styles['invalid']}`}/>
-			<input type="text" name='tag' value={inputData} onChange={inputChange}/>
-			<textarea name="text" id="" cols="30" rows="10"  className={`${styles['input']} ${formValidState.text ? '' : styles['invalid']}`}></textarea>
+			<div className={styles['wrapper-input']}>
+				<label htmlFor='date' className={styles['wrapper-extra_data']}>
+					<img src="../../../public/calendar.svg" alt="calendar icon" />
+					<div className={styles['wrapper-extra_data__text']}>Date</div>
+				</label>
+				<input type="date" name='date' id='date' className={`${styles['input']} ${formValidState.date ? '' : styles['invalid']}`}/>
+			</div>
+			<div className={styles['wrapper-input']}>
+				<label htmlFor='tag' className={styles['wrapper-extra_data']}>
+					<img src="../../../public/folder.svg" alt="calendar icon" />
+					<div className={styles['wrapper-extra_data__text']}>Marks</div>
+				</label>
+				<input type="text" name='tag' id='tag' value={inputData} onChange={inputChange} className={styles['input']}/>
+			</div>
+			<textarea name="text" id="" cols="30" rows="10" placeholder='Text' className={`${styles['input']} ${formValidState.text ? '' : styles['invalid']}`}></textarea>
+		
 			<Button text="save" />
 		</form>
 	);

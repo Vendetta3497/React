@@ -1,9 +1,54 @@
+textarea {
+   resize:vertical;
+   font-family: "Source Sans 3", sans-serif;
+}
+
 .journal-form {
+   font-family: "Source Sans 3", sans-serif;
    display: flex;
    flex-direction: column;
    gap: 30px;
 }
 
+.wrapper-input {
+   display: flex;
+   position: relative;
+}
+
+.wrapper-input::after{
+   content: "";
+   display: block;
+   height: 1px;
+   width: 100%;
+   position: absolute;
+   background-color: #FFFFFF99;
+   top: 23px
+}
+
+.wrapper-extra_data {
+   display: flex;
+   gap: 20px;
+   width: 150px;
+}
+
+.wrapper-extra_data__text {
+   font-size: 14px;
+   color: #FFFFFF99;
+}
+
+.input {
+   
+   border: none;
+   background: none;
+   outline: none;
+   position: relative;
+   width: 100%;
+}
+
+
+.input-title {
+   font-size: 32px;
+}
 
 .invalid {
    border: 1px solid red;
