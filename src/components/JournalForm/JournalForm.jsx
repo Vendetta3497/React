@@ -79,7 +79,6 @@ function JournalForm({ onSubmit }) {
 				
 		<form className={styles['journal-form']} onSubmit={addJournalItem}>
 			{/* {state.age} */}
-			{userId}
 			<Input type="text" name='title' ref={titleRef} onChange={onChange} placeholder='Title' value={values.title} appearence="title" isValid={isValid.title}/>
 			<div className={styles['wrapper-input']}>
 				<label htmlFor='date' className={styles['wrapper-extra_data']}>
@@ -97,7 +96,7 @@ function JournalForm({ onSubmit }) {
 			</div>
 			<textarea name="text" id="" cols="30" ref={textRef}  onChange={onChange} value={values.text} rows="10" placeholder='Text' className={`${styles['input']} ${isValid.text ? '' : styles['invalid']}`}></textarea>
 		
-			<Button text="save" />
+			<Button>Save</Button>
 		</form>
 
 
